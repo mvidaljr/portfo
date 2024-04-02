@@ -32,6 +32,7 @@ def submit_form():
 		try:
 			data = request.form.to_dict()
 			write_to_csv(data)
+			write_to_file(data)
 			return redirect('/thankyou.html')	
 		except:
 			return 'did not save to database'
